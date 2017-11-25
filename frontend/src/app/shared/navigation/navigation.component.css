@@ -1,0 +1,13 @@
+.navigation {
+    display: flex;
+    &-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
