@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
     i {
-        margin-top: 5px;
-    };
+      margin-top: 5px;
+    }
     i,
     img {
       margin-right: 10px;
@@ -19,11 +19,35 @@
 }
 
 .menu:hover {
-    color: #4682B4;
-    cursor: pointer;
+  color: #4682B4;
+  cursor: pointer;
 }
 
 .logo {
   width: 60px;
   height: auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+}
+
+.btn:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+.lightblue {
+  background-color: #4682B4;
 }
