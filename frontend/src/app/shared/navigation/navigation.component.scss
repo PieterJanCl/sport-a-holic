@@ -1,13 +1,28 @@
 .navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  margin-left: 40vh;
+  margin-right: 40vh;
+  &-item {
     display: flex;
-    &-item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
+    i {
+        margin-top: 5px;
+    };
+    i,
+    img {
+      margin-right: 10px;
     }
+  }
+}
+
+.menu:hover {
+    color: #338884
 }
 
 .logo {
-    width: 40px;
-    height: auto;
+  width: 60px;
+  height: auto;
 }
