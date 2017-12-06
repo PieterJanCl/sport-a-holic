@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { LopenComponent } from './lopen/lopen.component';
 import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { BadmintonComponent } from './badminton/badminton.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BadmintonComponent } from './badminton/badminton.component';
     BadmintonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
