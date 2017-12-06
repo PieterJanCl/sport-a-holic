@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LopenComponent } from './lopen/lopen.component';
 import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { BadmintonComponent } from './badminton/badminton.component';
+import { RegisterComponent } from './user/register/register.component';
+import { LoginComponent } from './user/login/login.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
     { path: 'lopen', component: LopenComponent },
     { path: 'zwemmen', component: ZwemmenComponent },
     { path: 'badminton', component: BadmintonComponent },

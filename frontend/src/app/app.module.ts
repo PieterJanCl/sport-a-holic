@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './user/login/login.component';
 import { LopenComponent } from './lopen/lopen.component';
 import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { BadmintonComponent } from './badminton/badminton.component';
