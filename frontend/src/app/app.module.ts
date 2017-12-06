@@ -8,9 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/login/login.component';
 import { LopenComponent } from './lopen/lopen.component';
 import { ZwemmenComponent } from './zwemmen/zwemmen.component';
-import { BadmintonComponent } from './badminton/badminton.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './user/register/register.component';
+import { FietsenComponent } from './fietsen/fietsen.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import { RegisterComponent } from './user/register/register.component';
     LoginComponent,
     LopenComponent,
     ZwemmenComponent,
-    BadmintonComponent,
-    RegisterComponent
+    RegisterComponent,
+    FietsenComponent
   ],
   imports: [
     BrowserModule,
