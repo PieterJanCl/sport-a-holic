@@ -10,6 +10,7 @@ import { LopenComponent } from './lopen/lopen.component';
 import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { BadmintonComponent } from './badminton/badminton.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './user/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     LoginComponent,
     LopenComponent,
     ZwemmenComponent,
-    BadmintonComponent
+    BadmintonComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
