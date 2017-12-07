@@ -12,4 +12,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  loginUser(username: HTMLInputElement, userpasswd: HTMLInputElement): boolean {
+    console.log(username.value + ' ' + userpasswd.value);
+    return false;
+  }
 }

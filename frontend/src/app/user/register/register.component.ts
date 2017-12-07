@@ -12,4 +12,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  addUser(username: HTMLInputElement, userpasswd: HTMLInputElement): boolean {
+    console.log(username.value + ' ' + userpasswd.value);
+    return false;
+  }
 }

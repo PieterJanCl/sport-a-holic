@@ -4,10 +4,10 @@
         Welcome
       </h1>
       <form class="form">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <input type="password" placeholder="Confirm password">
-        <button type="submit" id="login-button" routerLink="">Register</button>
+        <input type="text" placeholder="Gebruikersnaam" #username>
+        <input type="password" placeholder="Wachtwoord" #userpasswd>
+        <input type="password" placeholder="Wachtwoord bevestigen">
+        <button (click)="addUser(username, userpasswd)" id="login-button" routerLink="">Registreer</button>
       </form>
     </div>
   </div>

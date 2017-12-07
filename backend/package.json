@@ -1,32 +1,17 @@
 {
   "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "nodemon ./server.js localhost 3000"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PieterJanCl/sport-a-holic.git"
-  },
-  "keywords": [
-    "sport"
-  ],
-  "author": "Pieter-Jan Clijsters",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.1",
-    "mongodb": "^2.2.31"
-  },
-  "devDependencies": {
-    "eslint": "^4.7.2",
-    "nodemon": "^1.12.1",
-    "express": "^4.15.5",
-    "mongodb": "^2.2.31",
-    "mongoose": "^4.11.13",
-    "morgan": "^1.9.0",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }
