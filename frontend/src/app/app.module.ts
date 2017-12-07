@@ -14,8 +14,6 @@ import { FietsenComponent } from './fietsen/fietsen.component';
 
 @NgModule({
   declarations: [
-    BrowserModule,
-    HttpModule,
     AppComponent,
     NavigationComponent,
     FooterComponent,
@@ -27,6 +25,7 @@ import { FietsenComponent } from './fietsen/fietsen.component';
     FietsenComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     AppRoutingModule
   ],
