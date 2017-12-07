@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -14,6 +14,8 @@ import { FietsenComponent } from './fietsen/fietsen.component';
 
 @NgModule({
   declarations: [
+    BrowserModule,
+    HttpModule,
     AppComponent,
     NavigationComponent,
     FooterComponent,
