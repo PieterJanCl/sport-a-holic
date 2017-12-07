@@ -6,9 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const port = '3000';
-mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });
-require('./models/users');
 
+let passport = require('passport');
+require('./models/users');
+require('./config/passport');
+
+mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });
 
 var index = require('./routes/index');
 
@@ -25,7 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(passport.initialize());
 app.use('/', index);
 
 // catch 404 and forward to error handler
