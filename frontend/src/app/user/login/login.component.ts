@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Rx';
 import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl,ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators} from '@angular/forms';
 import { NavigationComponent} from '../../shared/navigation/navigation.component';
 
 
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   private message: string;
 
   constructor(private authService: AuthenticationService, private router: Router,
-    private fb: FormBuilder, private navBar: NavigationComponent) { }
+    private fb: FormBuilder) { }
 
   ngOnInit() {
     this.user = this.fb.group({
@@ -38,14 +38,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.authService.login(this.user.value.username, this.user.value.password).subscribe(val => {
-      console.log(val);
       if (val) {
         if (this.authService.redirectUrl) {
           this.router.navigateByUrl(this.authService.redirectUrl);
           this.authService.redirectUrl = undefined;
         } else {
           this.router.navigate(['/post/list']);
-          this.navBar.setloginText('Welcome, ' + this.user.value.username );
         }
       }
     }, err => this.errorMsg = err.json().message);

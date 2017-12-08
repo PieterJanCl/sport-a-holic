@@ -4,8 +4,8 @@
       Welcome
     </h1>
     <form class="form" [formGroup]='user' (ngSubmit)='onSubmit()'>
-      <input type="text" placeholder="Gebruikersnaam" formControllerName='username'>
-      <input type="password" placeholder="Wachtwoord" formControllerName='password'>
+      <input type="text" placeholder="Gebruikersnaam" formControlName='username'>
+      <input type="password" placeholder="Wachtwoord" formControlName='password'>
       <button type='submit' [disabled]="!user.valid" id="login-button">Aanmelden</button>
       <div class="red" *ngIf='errorMsg'>{{errorMsg}}</div>
     </form>

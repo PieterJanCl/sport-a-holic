@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 passport.use(new LocalStrategy(
-    function (username, passwoord, done) {
+    function (username, password, done) {
         User.findOne({
             username: username
         }, function (err, user) {
@@ -16,9 +16,9 @@ passport.use(new LocalStrategy(
                     message: 'Gebruikersnaam is niet correct.'
                 });
             }
-            if (!user.validPassword(passwoord)) {
+            if (!user.validPassword(password)) {
                 return done(null, false, {
-                    message: 'Wachtwoord if fout.'
+                    message: 'Wachtwoord is fout.'
                 });
             }
             return done(null, user);

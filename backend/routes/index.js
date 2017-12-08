@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+let passport = require('passport');
 let jwt = require('express-jwt');
 let mongoose = require('mongoose');
 let User = mongoose.model('User');
@@ -39,13 +39,16 @@ router.post('/API/login', function (req, res, next) {
   }
   passport.authenticate('local', function (err, user, info) {
     if (err) {
+      
       return next(err);
     }
     if (user) {
+      
       return res.json({
         token: user.generateJWT()
       });
     } else {
+      console.log('help');
       return res.status(401).json(info);
     }
   })(req, res, next);
