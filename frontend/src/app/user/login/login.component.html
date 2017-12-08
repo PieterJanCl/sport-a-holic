@@ -3,10 +3,11 @@
     <h1>
       Welcome
     </h1>
-    <form class="form">
-      <input type="text" placeholder="Gebruikersnaam" #username>
-      <input type="password" placeholder="Wachtwoord" #userpasswd>
-      <button (click)="loginUser(username, userpasswd)" id="login-button" routerLink="">Aanmelden</button>
+    <form class="form" [formGroup]='user' (ngSubmit)='onSubmit()'>
+      <input type="text" placeholder="Gebruikersnaam" formControllerName='username'>
+      <input type="password" placeholder="Wachtwoord" formControllerName='password'>
+      <button type='submit' id="login-button">Aanmelden</button>
+      <div class="red" *ngIf='errorMsg'>{{errorMsg}}<div>
     </form>
   </div>
 </div>
