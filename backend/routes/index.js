@@ -9,18 +9,10 @@ let auth = jwt({
   userProperty: 'payload'
 });
 
-
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Express'
-  });
-});
-
 router.post('/API/register/', function (req, res, next) {
   if (!req.body.username || !req.body.password) {
     return res.status(400).json({
-      message: 'Please fill out all fields'
+      message: 'Please fill out all fields correctly'
     });
   }
   let user = new User(req.body);
@@ -39,7 +31,7 @@ router.post('/API/register/', function (req, res, next) {
 router.post('/API/login', function (req, res, next) {
   if (!req.body.username || !req.body.password) {
     return res.status(400).json({
-      message: 'Please fill out all fields'
+      message: 'Please fill out all fields correctly'
     });
   }
   passport.authenticate('local', function (err, user, info) {
