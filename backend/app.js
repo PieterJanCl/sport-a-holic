@@ -10,7 +10,7 @@ const port = '3000';
 let passport = require('passport');
 require('./models/users');
 require('./config/passport');
-
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });
 
 var index = require('./routes/index');

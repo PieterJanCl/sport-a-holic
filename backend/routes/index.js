@@ -22,7 +22,6 @@ router.post('/API/register', function (req, res, next) {
   user.setPassword(req.body.password)
   user.save(function (err) {
     if (err) {
-      console.log('help');
       return next(err);
     }
     return res.json({
