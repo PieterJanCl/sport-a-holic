@@ -22,17 +22,12 @@ UserSchema.methods.generateJWT = function () {
     var today = new Date();
     var exp = new Date(today);
     exp.setDate(today.getDate() + 60);
-    return jwt.sign({
-        _id: this._id,
-        username: this.username,
-        exp: parseInt(exp.getTime() / 1000)
-    }, SECRET);
 
     return jwt.sign({
         _id: this._id,
         username: this.username,
         exp: parseInt(exp.getTime() / 1000),
-    }, process.env.RECIPE_BACKEND_SECRET);
+    }, process.env.SPORT_BACKEND_SECRET);
 };
 
 mongoose.model('User', UserSchema);

@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "source app-env && node ./bin/www",
-    "test": "nodemon ./app.js localhost 3000"
+    "start": " node ./bin/www",
+    "test": "source app-env && nodemon ./app.js localhost 3000"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

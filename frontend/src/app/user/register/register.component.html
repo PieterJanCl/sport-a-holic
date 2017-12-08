@@ -4,7 +4,12 @@
         Welcome
       </h1>
       <form class="form">
-        <input type="text" placeholder="Gebruikersnaam" #username>
+        <input type="text" placeholder="Gebruikersnaam" formControlName='username'>
+        <div class='red' 
+        *ngIf='user.get("username").errors?.userAlreadyExists 
+        && user.get("username").touched'>
+          a user with that name already exists
+        </div>
         <input type="password" placeholder="Wachtwoord" #userpasswd>
         <input type="password" placeholder="Wachtwoord bevestigen">
         <button (click)="addUser(username, userpasswd)" id="login-button" routerLink="">Registreer</button>

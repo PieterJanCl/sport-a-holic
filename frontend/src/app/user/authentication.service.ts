@@ -36,12 +36,12 @@ export class AuthenticationService {
   }
 
   register(username: string, password: string): Observable<boolean> {
-    return this.http.post(`${this._url}/register`, 
+    return this.http.post(`${this._url}/register`,
       { username: username, password: password })
       .map(res => res.json()).map(res => {
         const token = res.token;
         if (token) {
-          localStorage.setItem('currentUser', 
+          localStorage.setItem('currentUser',
             JSON.stringify({ username: username, token: res.token }));
           this._user$.next(username);
           return true;
@@ -49,6 +49,17 @@ export class AuthenticationService {
           return false;
         }
       });
+  }
+
+  checkUserNameAvailability(username: string): Observable<boolean> {
+    return this.http.post(`${this._url}/checkusername`, { username: username }).map(res => res.json())
+    .map(item => {
+      if (item.username === 'alreadyexists') {
+        return false;
+      } else {
+        return true;
+      }
+    });
   }
 
   logout() {
