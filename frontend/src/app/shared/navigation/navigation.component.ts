@@ -11,33 +11,21 @@ import { Observable } from 'rxjs/Rx';
 
 export class NavigationComponent implements OnInit {
 
-  private loginText: string;
 
-  constructor(private authService: AuthenticationService,private router: Router) {
-    if (this.authService.user$.value !== null) {
-      this.loginText = 'Welcome, ' + this.authService.user$.value;
-    } else if (this.authService.user$.value === null) {
-    this.loginText = '';
-    }
+  constructor(private authService: AuthenticationService, private router: Router) {
   }
 
   get currentUser(): Observable<string> {
     return this.authService.user$;
   }
 
-  get getloginText(){
-    return this.loginText;
-  }
-
   setloginText(input: string) {
     window.location.reload();
-    this.loginText = input;
   }
 
   logout() {
     this.authService.logout();
     this.router.navigate(['post/list']);
-    this.loginText = 'You have been logged out';
   }
 
   ngOnInit() {

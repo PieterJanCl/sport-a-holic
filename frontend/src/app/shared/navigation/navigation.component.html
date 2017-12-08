@@ -16,11 +16,19 @@
         <a class="links" href="fietsen">fietsen</a>
       </div>
     </div>
-    <div class="logInButton" id="buttons">
-      <a routerLink="/login" class="btn lightblue">Aanmelden</a>
+    <div *ngIf="(currentUser | async) else loginLink" class="flex">
+      <div class="logOutButton" id="buttons">
+        <a (click)="logout()" class="btn lightblue">Afmelden</a>
+      </div>
+      <h2>{{currentUser|async}}</h2>
     </div>
-    <div class="registerButton" id="buttons">
-      <a routerLink="/register" class="btn lightblue">Registreer</a>
-    </div>
+    <ng-template #loginLink>
+      <div class="logInButton" id="buttons">
+        <a routerLink="/login" class="btn lightblue">Aanmelden</a>
+      </div>
+      <div class="registerButton" id="buttons">
+        <a routerLink="/register" class="btn lightblue">Registreer</a>
+      </div>
+    </ng-template>  
   </div>
 </div>
