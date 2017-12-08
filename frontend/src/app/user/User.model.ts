@@ -1,10 +1,10 @@
 export class User {
     private _username: String;
-    private _userpasswd: String;
+    private _passwoord: String;
 
     constructor(name: String, passwd: String) {
         this._username = name;
-        this._userpasswd = passwd;
+        this._passwoord = passwd;
     }
 
     get username() {
@@ -15,11 +15,11 @@ export class User {
         this._username = name;
     }
 
-    get userpasswd() {
-        return this._userpasswd;
+    get passwoord() {
+        return this._passwoord;
     }
 
-    set userpasswd(passwd: String) {
-        this._userpasswd = passwd;
+    set passwoord(passwd: String) {
+        this._passwoord = passwd;
     }
 }
