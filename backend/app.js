@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 const port = '3000';
 
 let passport = require('passport');
-require('./models/user');
+require('./models/users');
 require('./config/passport');
 
 mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });

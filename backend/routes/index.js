@@ -9,17 +9,20 @@ let auth = jwt({
   userProperty: 'payload'
 });
 
-router.post('/API/register/', function (req, res, next) {
+router.post('/API/register', function (req, res, next) {
   if (!req.body.username || !req.body.password) {
     return res.status(400).json({
       message: 'Please fill out all fields correctly'
     });
   }
-  let user = new User(req.body);
+  
+  let user = new User();
+  
   user.username = req.body.username;
   user.setPassword(req.body.password)
   user.save(function (err) {
     if (err) {
+      console.log('help');
       return next(err);
     }
     return res.json({

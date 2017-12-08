@@ -6,7 +6,7 @@
     <form class="form" [formGroup]='user' (ngSubmit)='onSubmit()'>
       <input type="text" placeholder="Gebruikersnaam" formControllerName='username'>
       <input type="password" placeholder="Wachtwoord" formControllerName='password'>
-      <button type='submit' id="login-button">Aanmelden</button>
+      <button type='submit' [disabled]="!user.valid" id="login-button">Aanmelden</button>
       <div class="red" *ngIf='errorMsg'>{{errorMsg}}</div>
     </form>
   </div>

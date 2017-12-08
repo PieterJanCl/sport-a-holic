@@ -44,6 +44,7 @@ export class AuthenticationService {
     return this.http.post(`${this._url}/register`,
       { username: username, password: password })
       .map(res => res.json()).map(res => {
+        console.log('help', res);
         const token = res.token;
         if (token) {
           localStorage.setItem('currentUser',
