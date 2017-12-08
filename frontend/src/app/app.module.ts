@@ -11,6 +11,9 @@ import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './user/register/register.component';
 import { FietsenComponent } from './fietsen/fietsen.component';
+import { AuthenticationService } from './user/authentication.service';
+import { UserModule } from './user/user.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,16 +23,18 @@ import { FietsenComponent } from './fietsen/fietsen.component';
     HomeComponent,
     LoginComponent,
     LopenComponent,
-    ZwemmenComponent,
     RegisterComponent,
+    ZwemmenComponent,
     FietsenComponent
   ],
   imports: [
     HttpModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

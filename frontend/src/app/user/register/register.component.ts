@@ -13,11 +13,15 @@ export class RegisterComponent implements OnInit {
 
   public user: FormGroup;
 
+  get passwordControl(): FormControl {
+    return <FormControl>this.user.get('passwordGroup').get('password');
+  }
+
   constructor(private authenticationService: AuthenticationService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.user = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(4)],
+      username: ['', [Validators.required, Validators.minLength(6)],
         this.serverSideValidateUsername()],
       passwordGroup: this.fb.group({
         password: ['', [Validators.required, passwordValidator(12)]],
@@ -37,6 +41,15 @@ export class RegisterComponent implements OnInit {
         return { userAlreadyExists: true };
       });
     };
+  }
+
+  onSubmit() {
+    this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe (val => {
+      if (val) {
+        this.router.navigate(['']);
+        window.location.reload();
+      }
+    });
   }
 }
 

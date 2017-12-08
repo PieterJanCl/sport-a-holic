@@ -11,12 +11,4 @@ export class UserDataService {
 
     constructor(private http: Http) {
     }
-
-    get users(): Observable<User[]>{
-        return this.http.get(this._appUrl).map(response =>
-            response.json().map(item =>
-              new User(item.username, item.passwd)
-            )
-          );
-    }
 }

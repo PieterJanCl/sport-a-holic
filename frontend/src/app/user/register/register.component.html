@@ -1,18 +1,26 @@
 <div class="wrapper">
-    <div class="container">
-      <h1>
-        Welcome
-      </h1>
-      <form class="form">
-        <input type="text" placeholder="Gebruikersnaam" formControlName='username'>
-        <div class='red' 
-        *ngIf='user.get("username").errors?.userAlreadyExists 
+  <div class="container">
+    <h1>
+      Welcome
+    </h1>
+    <form [formGroup]='user' class="form" (ngSubmit)='onSubmit()'>
+      <input type="text" placeholder="Gebruikersnaam" formControlName='username'>
+      <div class='red' *ngIf='user.get("username").errors?.userAlreadyExists 
         && user.get("username").touched'>
-          a user with that name already exists
-        </div>
-        <input type="password" placeholder="Wachtwoord" #userpasswd>
-        <input type="password" placeholder="Wachtwoord bevestigen">
-        <button (click)="addUser(username, userpasswd)" id="login-button" routerLink="">Registreer</button>
-      </form>
-    </div>
+        Er bestaat al een gebruiker met die naam.
+      </div>
+      <div class='red' *ngIf='user.get("username").errors?.minlength 
+        && user.get("username").touched'>
+        Gebruikersnaam moet minimaal 6 karakters hebben.
+      </div>
+      <input type="password" placeholder="Wachtwoord" formControlName='password'>
+      <div class='red' *ngIf='passwordControl.errors?.passwordTooShort
+        && passwordControl.touched'>
+        Wachtwoord is verplicht en heeft minstens 12 karakters.
+      </div>
+      <input type="password" placeholder="Wachtwoord bevestigen" formControlName='confirmPassword'>
+
+      <button type="submit" [disabled]='!user.valid' id="login-button">Registreer</button>
+    </form>
   </div>
+</div>
