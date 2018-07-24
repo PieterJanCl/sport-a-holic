@@ -11,9 +11,9 @@
       </div>
       <div class="sporten">
         <a class="links" href="">home</a>
-        <a class="links" href="lopen">lopen</a>
-        <a class="links" href="zwemmen">zwemmen</a>
-        <a class="links" href="fietsen">fietsen</a>
+        <div *ngFor="let sport of sports | async">
+          <a class="links" href="{{sport._name}}">{{sport._name}}</a>
+        </div>
       </div>
     </div>
     <div *ngIf="(currentUser | async) else loginLink" class="flex">

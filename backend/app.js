@@ -1,14 +1,14 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-const port = '3000';
+const port = '3300';
 
 let passport = require('passport');
 require('./models/users');
+require('./models/sports');
 require('./config/passport');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });

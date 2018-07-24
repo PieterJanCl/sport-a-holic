@@ -11,9 +11,9 @@ import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './user/register/register.component';
 import { FietsenComponent } from './fietsen/fietsen.component';
-import { AuthenticationService } from './user/authentication.service';
 import { UserModule } from './user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     UserModule,
+    CoreModule,
     FormsModule,
     ReactiveFormsModule
   ],
