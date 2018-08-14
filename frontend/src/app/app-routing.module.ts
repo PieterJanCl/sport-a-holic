@@ -7,6 +7,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { FietsenComponent } from './fietsen/fietsen.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { CalenderComponent } from './calender/calender.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'lopen', component: LopenComponent },
     { path: 'zwemmen', component: ZwemmenComponent },
     { path: 'fietsen', component: FietsenComponent },
+    { path: 'calender', component: CalenderComponent },
     { path: '**', component: NotFoundComponent }
 ];
 

@@ -16,6 +16,7 @@
             <a class="links" href="{{sport._name}}">{{sport._name}}</a>
           </div>
         </ng-container>
+        <a *ngIf="(currentUser | async)" class="links" href="calender">calender</a>
       </div>
     </div>
     <div *ngIf="(currentUser | async) else loginLink" class="flex">

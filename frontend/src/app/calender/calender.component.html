@@ -1,0 +1,34 @@
+<div class="title">
+    <h3>Evenementen</h3>
+    <button (click)=openCreating()>Plan een evenement</button>
+</div>
+
+<div class="creating-event" *ngIf="creating">
+    <form class="form" [formGroup]='event' (ngSubmit)='onSubmit()'>
+        <input type="text" placeholder="sport" formControlName='sportName'>
+        <input type="date" placeholder="dd/mm/jj" formControlName="date">
+        <input type="text" placeholder="uu:mm" formControlName="uur">
+        <button type="submit" [disabled]="!event.valid" id="createEvent">Evenement aanmaken</button>
+      </form>
+</div>
+
+<div class="events">
+    <ng-container *ngFor="let event of events | async">
+        <div class="event" *ngIf="event._user === currentUser">
+            <div class="input">
+                <p>Sport:</p>
+                <div class="label sport-name">{{event._sportName}}</div>
+            </div>
+            <div class="input">
+                <p>Date:</p>
+                <div class="label date">{{event._date}}</div>
+            </div>
+            <div class="input">
+                <p>Uur:</p>
+                <div class="label uur">{{event._uur}}</div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+

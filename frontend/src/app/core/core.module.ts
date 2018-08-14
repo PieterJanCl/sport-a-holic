@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { Sport } from './models/sport';
-import { SportDataService } from './services/sportDataService';
+import { SportDataService } from './services/sport-data.service';
+import { CalenderService } from './services/event.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { SportDataService } from './services/sportDataService';
     BrowserModule
   ],
   providers: [
-    SportDataService
+    SportDataService,
+    CalenderService
   ],
   exports: [],
   bootstrap: []

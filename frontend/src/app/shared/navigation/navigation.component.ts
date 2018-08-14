@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../user/authentication.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { SportDataService } from '../../core/services/sportDataService';
+import { SportDataService } from '../../core/services/sport-data.service';
 
 @Component({
   selector: 'app-navigation',

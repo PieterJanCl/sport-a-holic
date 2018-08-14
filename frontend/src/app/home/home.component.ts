@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-import { SportDataService } from '../core/services/sportDataService';
+import { SportDataService } from '../core/services/sport-data.service';
 import { Sport } from '../core/models/sport';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
@@ -30,8 +30,7 @@ export class HomeComponent implements OnInit {
 
   addNewSport(sportName: string) {
     this.sportDataService.addNewSport(new Sport(sportName, true));
-    this.router.navigateByUrl('/lopen', {skipLocationChange: true}).then(() =>
-      this.router.navigate(['']));
+    this.router.navigateByUrl('/lopen', {skipLocationChange: true}).then(() => this.router.navigate(['']));
   }
 
   get currentUser(): Observable<string> {

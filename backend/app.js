@@ -8,6 +8,7 @@ const port = '3300';
 
 let passport = require('passport');
 require('./models/users');
+require('./models/events');
 require('./models/sports');
 require('./config/passport');
 mongoose.Promise = global.Promise;

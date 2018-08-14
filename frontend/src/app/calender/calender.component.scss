@@ -1,0 +1,71 @@
+:host {
+    background: #eee;
+    .title {
+        background: #eee;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 3px solid #DCDCDC;
+        padding: 0 20% 0 18%;
+        margin-bottom: 25px;
+        h3 {
+            color: #4682B4;
+        }
+        button {
+            background: #4682B4;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            align-self: center;
+            height: 25px;
+            cursor: pointer;
+        }
+    }
+    .creating-event {
+        height: 50px;
+        border-bottom: 3px solid #DCDCDC;
+        .form {
+            display: flex;
+            justify-content: space-around;
+            button {
+                background: #4682B4;
+                border-radius: 5px;
+                color: white;
+                font-size: 14px;
+                align-self: center;
+                height: 25px;
+            }
+            button:disabled {
+                opacity: .5;
+            }
+        }
+    }
+    .events {
+        width: 65%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        .event {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 25px;
+            .input {
+                height: 25px;
+                p {
+                    padding-left: 5px;
+                    display: inline;
+                    margin: 0;
+                }
+                .label {
+                    padding-left: 5px;
+                    display: inline;
+                }
+            }
+
+        }
+    }
+}

@@ -17,6 +17,7 @@ import { CoreModule } from './core/core.module';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { NewSportComponent } from './home/new-sports/new-sports.component';
+import { CalenderComponent } from './calender/calender.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewSportComponent } from './home/new-sports/new-sports.component';
     ZwemmenComponent,
     FietsenComponent,
     NotFoundComponent,
-    NewSportComponent
+    NewSportComponent,
+    CalenderComponent
   ],
   imports: [
     CommonModule,
