@@ -50,7 +50,7 @@ export class CalenderComponent implements OnInit {
         const date = moment(this.event.value.date).format('DD MMM YYYY');
         this.calenderService.addEvent(new Event(this.event.value.sportName, date, this.event.value.uur, this.currentUser));
         this.creating = true;
-        this.router.navigateByUrl('/lopen', {skipLocationChange: true}).then(() => this.router.navigate(['/calender']));
+        this.router.navigateByUrl('/lopen', {skipLocationChange: true}).then(() => this.router.navigate(['/event']));
 
     }
 

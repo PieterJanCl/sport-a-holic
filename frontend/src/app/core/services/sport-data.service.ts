@@ -18,16 +18,6 @@ export class SportDataService {
         );
     }
 
-    get newSports(): Observable<Sport[]> {
-        return this.http.get(this._appUrl).map(response =>
-            response.json().map(item => {
-                if (item.newSport) {
-                    return new Sport(item.name, item.newSport);
-                }
-            })
-        );
-    }
-
     addNewSport(sport: Sport) {
         return this.http.post(this._appUrl, sport)
             .map(res => res.json())

@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     { path: 'lopen', component: LopenComponent },
     { path: 'zwemmen', component: ZwemmenComponent },
     { path: 'fietsen', component: FietsenComponent },
-    { path: 'calender', component: CalenderComponent },
+    { path: 'event', component: CalenderComponent },
     { path: '**', component: NotFoundComponent }
 ];
 
