@@ -5,26 +5,18 @@
   </div>
 </div>
 
-<div class="sports">
-  <div class="cards" *ngFor="let sport of Sport | async">
-    <a class="card" routerLink="/{{sport}}">
-      <img class="card-img" src="../../assets/img/{{sport}}.png" alt="{{sport}}">
+<div class="cards">
+  <ng-container *ngFor="let sport of sports | async">
+    <a class="card" routerLink="/{{sport._name}}" *ngIf="!sport._newSport">
+      <img class="card-img" src="../../assets/img/{{sport._name}}.png" alt="{{sport._name}}">
       <div class="container">
-        <h4>{{sport}}</h4>
+        <h4>{{sport._name}}</h4>
       </div>
     </a>
-    <a class="card" routerLink="/zwemmen">
-      <img class="card-img" src="../../assets/img/rsz_screen_shot_2017-12-05_at_191403.png" alt="zwemmen">
-      <div class="container">
-        <h4>Zwemmen</h4>
-      </div>
-    </a>
-    <a class="card" routerLink="/fietsen">
-      <img class="card-img" src="../../assets/img/rsz_screen_shot_2017-12-06_at_222154.jpg" alt="fietsen">
-      <div class="container">
-        <h4>Fietsen</h4>
-      </div>
-    </a>
-  </div>
+  </ng-container>
 </div>
 
+<app-new-sports-component
+    [sports]="sports"
+    (addNewSport)=addNewSport($event)
+></app-new-sports-component>

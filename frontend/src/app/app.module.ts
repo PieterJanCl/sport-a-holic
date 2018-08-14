@@ -14,6 +14,9 @@ import { FietsenComponent } from './fietsen/fietsen.component';
 import { UserModule } from './user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
+import { CommonModule } from '@angular/common';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { NewSportComponent } from './home/new-sports/new-sports.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +28,12 @@ import { CoreModule } from './core/core.module';
     LopenComponent,
     RegisterComponent,
     ZwemmenComponent,
-    FietsenComponent
+    FietsenComponent,
+    NotFoundComponent,
+    NewSportComponent
   ],
   imports: [
+    CommonModule,
     HttpModule,
     BrowserModule,
     AppRoutingModule,

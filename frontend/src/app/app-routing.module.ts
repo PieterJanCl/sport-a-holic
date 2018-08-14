@@ -6,14 +6,17 @@ import { ZwemmenComponent } from './zwemmen/zwemmen.component';
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { FietsenComponent } from './fietsen/fietsen.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const appRoutes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
+    { path: 'home', component: HomeComponent},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'lopen', component: LopenComponent },
     { path: 'zwemmen', component: ZwemmenComponent },
     { path: 'fietsen', component: FietsenComponent },
-    { path: '**', component: HomeComponent }
+    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

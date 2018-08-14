@@ -11,9 +11,11 @@
       </div>
       <div class="sporten">
         <a class="links" href="">home</a>
-        <div *ngFor="let sport of sports | async">
-          <a class="links" href="{{sport._name}}">{{sport._name}}</a>
-        </div>
+        <ng-container *ngFor="let sport of sports | async">
+          <div *ngIf="!sport._newSport">
+            <a class="links" href="{{sport._name}}">{{sport._name}}</a>
+          </div>
+        </ng-container>
       </div>
     </div>
     <div *ngIf="(currentUser | async) else loginLink" class="flex">

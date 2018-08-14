@@ -1,9 +1,8 @@
-import { Observable } from 'rxjs/Rx';
 import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators} from '@angular/forms';
-import { NavigationComponent} from '../../shared/navigation/navigation.component';
+import { Observable } from 'rxjs/Rx';
 
 
 function passwordValidator(length: number): ValidatorFn {

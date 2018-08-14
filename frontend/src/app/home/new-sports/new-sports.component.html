@@ -1,0 +1,23 @@
+<div class="new-sports">
+    <div class="title">
+        <h3>Nieuwe sporten</h3>
+        <input type="text" *ngIf="question" id="sportName">
+        <button (click)="addSport()">toevoegen</button>
+    </div>
+    
+    <p>
+        Deze site zit nog in een begin fase. We zouden graag van jullie weten welke sporten jullie hier graag zouden bij zien komen. 
+        Dit duurt maar enkele seconden, het enige wat je moet doen is hier op de knop toevoegen klikken en de naam van de sport meegeven.
+        Wij zullen dan wel zorgen voor de nodige schema's en tips.
+    </p>
+    
+    <div class="cards">
+        <ng-container *ngFor="let sport of sports | async">
+            <div class="card" *ngIf="sport._newSport">
+                <div class="container">
+                    <h4>{{sport._name}}</h4>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let passport = require('passport');
-let jwt = require('express-jwt');
+// let jwt = require('express-jwt');
 let mongoose = require('mongoose');
 let User = mongoose.model('User');
 let Sport = mongoose.model('Sport');
@@ -11,6 +11,7 @@ let Sport = mongoose.model('Sport');
 // 	userProperty: 'payload'
 // });
 
+// sports
 router.get('/API/sports', function (req, res, next) {
 	Sport.find(function(err, sports) {
 		if(err) { return next(err)}
@@ -21,6 +22,7 @@ router.get('/API/sports', function (req, res, next) {
 router.post('/API/sports', function (req, res, next) {
 	let sport = new Sport();
 	sport.name = req.body.name;
+	sport.newSport = req.body.newSport;
 	sport.save(function(err, rec) {
 		if (err) {
 			return next(err);
@@ -29,6 +31,8 @@ router.post('/API/sports', function (req, res, next) {
 	})
 });
 
+// user
+// registering
 router.post('/API/register', function (req, res, next) {
 	if (!req.body.username || !req.body.password) {
 		return res.status(400).json({
@@ -50,6 +54,7 @@ router.post('/API/register', function (req, res, next) {
 	});
 });
 
+//login
 router.post('/API/login', function (req, res, next) {
 	if (!req.body.username || !req.body.password) {
 		return res.status(400).json({

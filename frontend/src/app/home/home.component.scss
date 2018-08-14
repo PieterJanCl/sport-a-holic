@@ -17,20 +17,21 @@
   height: auto;
 }
 
-
 .cards {
   width: 65%;
   display: flex;
   justify-content: space-between;
   margin: auto;
-  margin-top: 75px;
-  margin-bottom: 75px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
   .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     max-width: 300px;
     width: 100%;
     height: auto;
+    margin-bottom: 25px;
     cursor: pointer;
   }
   .card:hover {

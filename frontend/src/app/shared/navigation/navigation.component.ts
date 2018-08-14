@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../user/authentication.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { SportDataService } from '../../core/services/sportDataService';
 import { Sport } from '../../core/models/sport';
 
@@ -35,10 +35,6 @@ export class NavigationComponent implements OnInit {
 
   get sports() {
     return this._sports;
-  }
-
-  addSport() {
-    this.sportDataService.addNewSport(new Sport('fietsen')).subscribe();
   }
 
   ngOnInit() {
