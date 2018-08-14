@@ -19,7 +19,6 @@ function passwordValidator(length: number): ValidatorFn {
 export class LoginComponent implements OnInit {
   public user: FormGroup;
   public errorMsg: string;
-  private message: string;
 
   constructor(private authService: AuthenticationService, private router: Router,
     private fb: FormBuilder) { }
@@ -42,7 +41,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(this.authService.redirectUrl);
           this.authService.redirectUrl = undefined;
         } else {
-          this.router.navigate(['/post/list']);
+          this.router.navigate(['/home']);
         }
       }
     }, err => this.errorMsg = err.json().message);

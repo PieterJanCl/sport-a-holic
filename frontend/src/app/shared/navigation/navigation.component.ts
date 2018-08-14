@@ -3,7 +3,6 @@ import { AuthenticationService } from '../../user/authentication.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { SportDataService } from '../../core/services/sportDataService';
-import { Sport } from '../../core/models/sport';
 
 @Component({
   selector: 'app-navigation',
@@ -30,7 +29,7 @@ export class NavigationComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['post/list']);
+    this.router.navigate(['/home']);
   }
 
   get sports() {

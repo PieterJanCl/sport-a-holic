@@ -17,6 +17,7 @@
 </div>
 
 <app-new-sports-component
+    [currentUser]="currentUser | async"
     [sports]="sports"
     (addNewSport)=addNewSport($event)
 ></app-new-sports-component>

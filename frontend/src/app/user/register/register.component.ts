@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.user.value.username, this.passwordControl.value);
     this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe (val => {
       if (val) {
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
         window.location.reload();
       }
     });

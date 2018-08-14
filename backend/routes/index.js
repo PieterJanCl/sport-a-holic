@@ -1,25 +1,25 @@
 var express = require('express');
 var router = express.Router();
-let passport = require('passport');
-// let jwt = require('express-jwt');
+let jwt = require('express-jwt');
 let mongoose = require('mongoose');
 let User = mongoose.model('User');
+let passport = require('passport');
 let Sport = mongoose.model('Sport');
 
-// let auth = jwt({
-// 	secret: process.env.SPORT_BACKEND_SECRET,
-// 	userProperty: 'payload'
-// });
+let auth = jwt({
+	secret: process.env.SPORT_BACKEND_SECRET,
+	userProperty: 'payload'
+});
 
 // sports
-router.get('/API/sports', function (req, res, next) {
+router.get('/API/sports/', function (req, res, next) {
 	Sport.find(function(err, sports) {
 		if(err) { return next(err)}
 		res.json(sports)
 	})
 })
 
-router.post('/API/sports', function (req, res, next) {
+router.post('/API/sports/', function (req, res, next) {
 	let sport = new Sport();
 	sport.name = req.body.name;
 	sport.newSport = req.body.newSport;
@@ -67,12 +67,13 @@ router.post('/API/login', function (req, res, next) {
 			return next(err);
 		}
 		if (user) {
-
+			console.log('test');
 			return res.json({
 				token: user.generateJWT()
 			});
 		} else {
-			console.log('help');
+			console.log('test');
+
 			return res.status(401).json(info);
 		}
 	})(req, res, next);

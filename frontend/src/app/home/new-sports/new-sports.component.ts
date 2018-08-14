@@ -8,6 +8,7 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit
 })
 export class NewSportComponent {
   @Input() sports;
+  @Input() currentUser;
   @Output() addNewSport = new EventEmitter();
   question = false;
 
