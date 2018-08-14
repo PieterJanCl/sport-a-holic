@@ -20,7 +20,7 @@ router.get('/API/events/', function (req, res, next) {
 	})
 })
 
-router.post('/API/events/', function (req, res, next) {
+router.post('/API/events/', auth, function (req, res, next) {
 	let event = new Event();
 	event.sportName = req.body.sportName;
 	event.date = req.body.date;

@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe (val => {
+      console.log(val);
       if (val) {
         this.router.navigate(['/home']);
         window.location.reload();

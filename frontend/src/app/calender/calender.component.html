@@ -12,6 +12,15 @@
       </form>
 </div>
 
+<div class="text">
+    <p>
+        Hier kan je evenementen plannen, en ze raadplegen. Het is de bedoeling om hier een planning op te maken wanneer je wilt gaan sporten.
+        Je kan hier altijd naar terug komen om te kijken wnr je nog moet lopen de komende weken en wanneer je hebt gelopen.
+        Een trainingsmoment aanmaken doe je door op de knop evenement aanmaken te klikken. Enige dat je moet meegeven is de sport, de datum en het uur.
+        Veel succes.
+    </p>
+</div>
+
 <div class="events">
     <ng-container *ngFor="let event of events | async">
         <div class="event" *ngIf="event._user === currentUser">
