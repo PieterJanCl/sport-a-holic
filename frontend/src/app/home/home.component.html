@@ -1,0 +1,23 @@
+<div class="home">
+  <img class="home-img" src="../../assets/img/Screen Shot 2017-11-25 at 19.55.11.png" alt="sportsIng">
+  <div class="text-on-image">
+    <h1>Make Yourself Proud</h1>
+  </div>
+</div>
+
+<div class="cards">
+  <ng-container *ngFor="let sport of sports | async">
+    <a class="card" routerLink="/{{sport._name}}" *ngIf="!sport._newSport">
+      <img class="card-img" src="../../assets/img/{{sport._name}}.png" alt="{{sport._name}}">
+      <div class="container">
+        <h4>{{sport._name}}</h4>
+      </div>
+    </a>
+  </ng-container>
+</div>
+
+<app-new-sports-component
+    [currentUser]="currentUser | async"
+    [sports]="sports"
+    (addNewSport)=addNewSport($event)
+></app-new-sports-component>

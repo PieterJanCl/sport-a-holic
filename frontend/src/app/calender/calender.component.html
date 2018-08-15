@@ -1,0 +1,43 @@
+<div class="title">
+    <h3>Evenementen</h3>
+    <button (click)=openCreating()>Plan een evenement</button>
+</div>
+
+<div class="creating-event" *ngIf="creating">
+    <form class="form" [formGroup]='event' (ngSubmit)='onSubmit()'>
+        <input type="text" placeholder="sport" formControlName='sportName'>
+        <input type="date" placeholder="dd/mm/jj" formControlName="date">
+        <input type="text" placeholder="uu:mm" formControlName="uur">
+        <button type="submit" [disabled]="!event.valid" id="createEvent">Evenement aanmaken</button>
+      </form>
+</div>
+
+<div class="text">
+    <p>
+        Hier kan je evenementen plannen, en ze raadplegen. Het is de bedoeling om hier een planning op te maken wanneer je wilt gaan sporten.
+        Je kan hier altijd naar terug komen om te kijken wnr je nog moet lopen de komende weken en wanneer je hebt gelopen.
+        Een trainingsmoment aanmaken doe je door op de knop evenement aanmaken te klikken. Enige dat je moet meegeven is de sport, de datum en het uur.
+        Veel succes.
+    </p>
+</div>
+
+<div class="events">
+    <ng-container *ngFor="let event of events | async">
+        <div class="event" *ngIf="event._user === currentUser">
+            <div class="input">
+                <p>Sport:</p>
+                <div class="label sport-name">{{event._sportName}}</div>
+            </div>
+            <div class="input">
+                <p>Date:</p>
+                <div class="label date">{{event._date}}</div>
+            </div>
+            <div class="input">
+                <p>Uur:</p>
+                <div class="label uur">{{event._uur}}</div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+

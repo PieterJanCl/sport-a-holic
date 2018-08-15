@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>
+      Welcome
+    </h1>
+    <form [formGroup]='user' class="form" (ngSubmit)='onSubmit()'>
+      <input type="text" placeholder="Gebruikersnaam" formControlName='username'>
+      <div class='red' *ngIf='user.get("username").errors?.userAlreadyExists 
+      && user.get("username").touched'>
+        Er bestaat al een gebruiker met die naam.
+      </div>
+      <div class='red' *ngIf='user.get("username").errors?.minlength
+      && user.get("username").touched'>
+        Een gebruikersnaam moet bestaan uit minstens 6 karakters.
+      </div>
+      <div formGroupName='passwordGroup'>
+        <input type="password" placeholder="Wachtwoord" formControlName='password'>
+        <div class='red' *ngIf='passwordControl.errors?.passwordTooShort
+        && passwordControl.touched'>
+          Wachtwoord moet minstens 12 karakters hebben.
+        </div>
+        <input type="password" placeholder="Wachtwoord bevestigen" formControlName='confirmPassword'>
+        <div class='red' *ngIf='user.get("passwordGroup").errors?.passwordsDiffer
+        && user.get("passwordGroup").get("confirmPassword").touched
+        && user.get("passwordGroup").get("password").touched'>
+          Wachtwoorden moeten overeenkomen.
+        </div>
+      </div>
+      <button type="submit" [disabled]='!user.valid'>Registreer</button>
+    </form>
+  </div>
+</div>
