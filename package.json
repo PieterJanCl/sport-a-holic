@@ -1,0 +1,34 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "Sport-a-holic app",
+    "homepage": "http://www.github.com/PieterJanCl/",
+    "scripts": {
+        "start": "node server",
+        "deploy-backend": "git subtree push --prefix backend sport-backend master",
+        "build-frontend": "cd frontend && ng build --prod",
+        "commit-build-changes": "git add . && git commit -m 'chore(build): build files'",
+        "deploy-frontend": "npm run build-frontend && npm run copy && npm run commit-build-changes && git subtree push --prefix serve-frontend sport-frontend master",
+        "copy": "cpx 'frontend/dist/**' serve-frontend/www"
+    },
+    "author": {
+        "name": "Pieter-Jan Clijsters",
+        "email": "pieterjan.clijsters.w3389@student.hogent.be",
+        "web": "http://www.github.com/PieterJanCl/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/PieterJanCl/sport-a-holic/"
+    },
+    "engines": {},
+    "dependencies": {
+        "connect": "^3.6.5",
+        "cors": "^2.8.4",
+        "serve-static": "^1.13.1"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "copyfiles": "^2.0.0",
+        "cpx": "^1.5.0"
+    }
+}

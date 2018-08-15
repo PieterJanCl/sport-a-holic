@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "source app-env && node ./bin/www",
-    "test": "source app-env && nodemon ./app.js localhost 3000",
-    "backend-test": "source ./app-env && node ./node_modules/jasmine/bin/jasmine.js"
+    "start-local": "source app-env && nodemon ./bin/www",
+    "start": "source app-env && node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

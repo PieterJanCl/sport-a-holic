@@ -15,12 +15,15 @@ require('./models/sports');
 require('./config/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sportdb', {  useMongoClient: true });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+let cors = require('cors');
+app.use(cors({origin: "*"}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
