@@ -15,7 +15,7 @@ require('./models/sports');
 require('./config/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.sport_a_holic || 'mongodb://localhost/sportdb', {useMongoClient: true});
+mongoose.connect(process.env.SPORT_A_HOLIC || 'mongodb://localhost/sportdb', {useMongoClient: true});
 
 var index = require('./routes/index');
 var users = require('./routes/users');
