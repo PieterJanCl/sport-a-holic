@@ -7,7 +7,7 @@ import { AuthenticationService } from '../../user/authentication.service';
 
 @Injectable()
 export class CalenderService {
-    private readonly _appUrl = 'http://localhost:4200/API/events';
+    private readonly _appUrl = '/API/events';
 
     constructor(private http: Http, private auth: AuthenticationService) {}
 

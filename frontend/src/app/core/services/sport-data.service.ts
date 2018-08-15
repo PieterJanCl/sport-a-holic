@@ -7,7 +7,7 @@ import { AuthenticationService } from '../../user/authentication.service';
 
 @Injectable()
 export class SportDataService {
-    private readonly _appUrl = 'http://localhost:4200/API/sports';
+    private readonly _appUrl = '/API/sports';
 
     constructor(private http: Http, private auth: AuthenticationService) {}
 
