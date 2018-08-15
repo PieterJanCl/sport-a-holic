@@ -4,10 +4,11 @@ import { Event } from '../models/event';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { AuthenticationService } from '../../user/authentication.service';
+import {BACKEND_URL} from '../../../environments/environment.prod';
 
 @Injectable()
 export class CalenderService {
-    private readonly _appUrl = '/API/events';
+    private readonly _appUrl = `${BACKEND_URL}/API/events`;
 
     constructor(private http: Http, private auth: AuthenticationService) {}
 

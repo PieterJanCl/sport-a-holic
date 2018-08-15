@@ -2,6 +2,7 @@ import { BehaviorSubject, Observable } from 'rxjs/Rx';
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import {BACKEND_URL} from '../../environments/environment.prod';
 
 function parseJwt(token) {
   if (!token) {
@@ -16,7 +17,7 @@ function parseJwt(token) {
 export class AuthenticationService {
 
   private readonly _tokenKey = 'currentUser';
-  private readonly _url = '/API/users';
+  private readonly _url = `${BACKEND_URL}/API/users`;
   private _user$: BehaviorSubject<string>;
   public redirectUrl: string;
 
