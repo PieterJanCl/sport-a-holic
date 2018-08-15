@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 
 import { SportDataService } from './services/sport-data.service';
 import { CalenderService } from './services/event.service';
-import { basehttpInterceptorProviders } from '../http-interceptors';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { basehttpInterceptorProviders } from '../http-interceptors';
   ],
   providers: [
     SportDataService,
-    CalenderService,
-    basehttpInterceptorProviders
+    CalenderService
   ],
   exports: [],
   bootstrap: []

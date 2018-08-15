@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 import { NavigationComponent } from '../shared/navigation/navigation.component';
-import { basehttpInterceptorProviders } from '../http-interceptors';
-
 
 @NgModule({
   imports: [
@@ -16,6 +14,6 @@ import { basehttpInterceptorProviders } from '../http-interceptors';
     RouterModule,
     FormsModule
   ],
-  providers: [basehttpInterceptorProviders, AuthenticationService, NavigationComponent]
+  providers: [AuthenticationService, NavigationComponent]
 })
 export class UserModule { }
