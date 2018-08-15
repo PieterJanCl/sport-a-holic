@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start-local": "source app-env && nodemon ./bin/www",
+    "start-local": "nodemon ./bin/www",
     "start": "source app-env && node ./bin/www"
   },
   "dependencies": {
