@@ -11,6 +11,10 @@ let auth = jwt({
 	userProperty: 'payload'
 });
 
+router.get('/', function(req, res, next) {
+	res.send('server works');
+  });
+
 // events
 router.get('/API/events/', auth, function (req, res, next) {
 	Event.find(function(err, events) {
