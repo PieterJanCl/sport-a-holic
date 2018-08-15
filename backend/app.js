@@ -15,7 +15,7 @@ require('./models/sports');
 require('./config/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sportdb', {  useMongoClient: true });
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sportdb');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
