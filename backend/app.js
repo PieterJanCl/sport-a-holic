@@ -7,14 +7,18 @@ var mongoose = require('mongoose');
 const port = '3300';
 
 let passport = require('passport');
+
 require('./models/users');
 require('./models/events');
 require('./models/sports');
+
 require('./config/passport');
+
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/sportdb', {  useMongoClient: true });
 
 var index = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -30,7 +34,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
+
 app.use('/', index);
+app.use('/API/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
